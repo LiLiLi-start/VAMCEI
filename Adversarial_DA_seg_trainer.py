@@ -437,23 +437,23 @@ def ADA_Train(Train_LoaderA, Train_LoaderB, encoder, decoderA, decoderAdown2, de
         #     plt.show()
         # print('-------------------------------')
 
-        distance_loss = DistanceNet(
-            mu_ct, logvar_ct, mu_mr, logvar_mr) 
-        distance_down2_loss = DistanceNet(
-            mudown2_ct, logvardown2_ct, mudown2_mr, logvardown2_mr)
-        distance_down4_loss = DistanceNet(
-            mudown4_ct, logvardown4_ct, mudown4_mr, logvardown4_mr)
-
-
-
         # distance_loss = DistanceNet(
-        #     mu_ct, logvar_ct, mu_mr, logvar_mr) + DistanceNet(mu_mr, logvar_mr, mu_ct, logvar_ct)
+        #     mu_ct, logvar_ct, mu_mr, logvar_mr) 
         # distance_down2_loss = DistanceNet(
-        #     mudown2_ct, logvardown2_ct, mudown2_mr, logvardown2_mr) + DistanceNet(
-        #     mudown2_mr, logvardown2_mr, mudown2_ct, logvardown2_ct)
+        #     mudown2_ct, logvardown2_ct, mudown2_mr, logvardown2_mr)
         # distance_down4_loss = DistanceNet(
-        #     mudown4_ct, logvardown4_ct, mudown4_mr, logvardown4_mr) + DistanceNet(
-        #     mudown4_mr, logvardown4_mr, mudown4_ct, logvardown4_ct)
+        #     mudown4_ct, logvardown4_ct, mudown4_mr, logvardown4_mr)
+
+
+
+        distance_loss = DistanceNet(
+            mu_ct, logvar_ct, mu_mr, logvar_mr) + DistanceNet(mu_mr, logvar_mr, mu_ct, logvar_ct)
+        distance_down2_loss = DistanceNet(
+            mudown2_ct, logvardown2_ct, mudown2_mr, logvardown2_mr) + DistanceNet(
+            mudown2_mr, logvardown2_mr, mudown2_ct, logvardown2_ct)
+        distance_down4_loss = DistanceNet(
+            mudown4_ct, logvardown4_ct, mudown4_mr, logvardown4_mr) + DistanceNet(
+            mudown4_mr, logvardown4_mr, mudown4_ct, logvardown4_ct)
 
         # 源域和目标域相同类别的原型对齐
         #
