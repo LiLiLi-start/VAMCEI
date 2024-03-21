@@ -1,6 +1,6 @@
 # The Implementation of VAMCEI
 ### Towards Accurate Cardiac MRI Segmentation with Variational Autoencoder-Based Unsupervised Domain Adaptation  
-Submitted to **IEEE Transactions on Medical Imaging (TMI)**
+Published in **IEEE Transactions on Medical Imaging (TMI)**
 
 # Quick Start
 ## 1. Environment Setup
